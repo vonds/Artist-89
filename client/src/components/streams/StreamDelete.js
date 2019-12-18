@@ -42,8 +42,9 @@ class StreamDelete extends React.Component {
 
     render() {
         return (
-            <div>
+            <div class="modal">
                 <Modal
+
                     content={this.renderContent()}
                     actions={this.renderActions()}
                     onDismiss={() => history.push('/')}
@@ -53,6 +54,7 @@ class StreamDelete extends React.Component {
     }
 
 }
+
 
 const mapStateToProps = (state, ownProps) => {
     return { stream: state.streams[ownProps.match.params.id] }

@@ -4,15 +4,17 @@ import ReactDOM from 'react-dom'
 
 const Modal = props => {
     return ReactDOM.createPortal(
-        <div onClick={props.onDismiss} className="ui modal dimmer visible active">
+        <div onClick={props.onDismiss} className="modal-dialog" role="document">
             <div onClick={(e) => e.stopPropagation()} className="ui standard modal-content visible active">
-                <div className="header">{props.title}</div>
-                <div className="content">{props.content}</div>
-                <div className="actions">{props.actions}</div>
+                <div className="modal-title">{props.title}</div>
+                <div className="modal-body">{props.content}</div>
+                <div className="modal-footer">{props.actions}</div>
             </div>
         </div>,
         document.querySelector('#modal')
     )
 }
+
+
 
 export default Modal
